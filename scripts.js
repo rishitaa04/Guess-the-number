@@ -1,18 +1,27 @@
 const input = document.getElementById("numberInput");
-const submitBtn = document.getElementById("submit");
+const submitBtn = document.getElementById("submitBtn");
 
-// Function that performs the action
+const secretNumber = 29; // the correct number
+
 function handleGuess() {
-    const value = input.value;
+    const value = Number(input.value); // convert from string → number
 
     // Check if input is empty
-    if (value === "" || value === null) {
+    if (input.value === "" || input.value === null) {
         alert("Please enter a number first!");
-        return; // stop the function
+        return;
     }
 
-    console.log("User entered:", value);
-    alert("You entered: " + value);
+    // Compare with secret number
+    if (value === secretNumber) {
+        alert("🎉 You guessed it right!!");
+    } 
+    else if (value < secretNumber) {
+        alert("⬇️ Too low! Try a higher number.");
+    } 
+    else if (value > secretNumber) {
+        alert("⬆️ Too high! Try a lower number.");
+    }
 }
 
 // Trigger on Enter key
