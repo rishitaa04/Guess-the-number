@@ -1,7 +1,7 @@
 const input = document.getElementById("numberInput");
 const submitBtn = document.getElementById("submitBtn");
 
-const secretNumber = 29; // the correct number
+const secretNumber = 29;
 
 function handleGuess() {
     const value = Number(input.value); // convert from string → number
@@ -12,7 +12,7 @@ function handleGuess() {
         return;
     }
 
-    // Compare with secret number
+    // Compare with the number
     if (value === secretNumber) {
         alert("🎉 You guessed it right!!");
     } 
@@ -24,12 +24,12 @@ function handleGuess() {
     }
 }
 
-// Trigger on Enter key
+// Onclick to enter key - perform this 
 input.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         handleGuess();
     }
 });
 
-// Trigger on button click
+// When you click enter submit button
 submitBtn.addEventListener("click", handleGuess);
